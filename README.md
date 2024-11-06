@@ -1,0 +1,2 @@
+# my.terminal
+info.cli
