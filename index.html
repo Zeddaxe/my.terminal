@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terminal w0rldwid3</title>
+    <title>w0rldwid3.cli</title>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <style>
         body {
@@ -79,7 +79,7 @@
 <body>
     <div class="terminal">
         <div class="welcome-text">
-            <h1>Welcome to the w0rldwid3 Terminal konsole</h1>
+            <h1>Welcome to the w0rldwid3 Konsole</h1>
             <p>Type or select a command to learn more about w0rldwid3.</p>
             <div class="commands-list">
                 <p>Available commands (type or click to use):</p>
@@ -97,3 +97,86 @@
         <div class="command-line">
             <pre>w0rldwid3@kali:~$</pre>
         </div>
+         </div>
+        <div class="input-area">
+            <input type="text" id="commandInput" placeholder="Enter a command...">
+        </div>
+
+        <div id="output"></div>
+    </div>
+
+    <script>
+        const commandInput = document.getElementById('commandInput');
+        const outputDiv = document.getElementById('output');
+
+        function executeCommand(command) {
+            commandInput.value = command;
+            processCommand();
+        }
+
+        function processCommand() {
+            const command = commandInput.value.trim().toLowerCase();
+            let response = '';
+
+            switch (command) {
+                case 'cat discord.txt':
+                    response = '<p>Join my Discord community server: <a href="https://discord.gg/zQ9mXpN6Jy" target="_blank">https://discord.gg/zQ9mXpN6Jy</a></p>';
+                    break;
+                case 'cat streaming.txt':
+                    response = '<p>We release videos 3-5 times a week on YouTube: <a href="https://youtube.com/@TylerRamsbey" target="_blank">https://youtube.com/@TylerRamsbey</a></p>' +
+                               '<p>We live stream regularly on Twitch: <a href="https://twitch.tv/hack_smarter" target="_blank">https://twitch.tv/hack_smarter</a></p>';
+                    break;
+                case 'cat info.txt':
+                    response = '<p>w0rldwid3 syndicate is a community dedicated to ethical hacking, cybersecurity, and continuous learning. We have a Capture The Flag (CTF) team, offer coaching, and host weekly meetings to help members sharpen their skills. Stay connected with our latest content and events.</p>';
+                    break;
+                case 'cat community-resources.txt':
+                    response = '<p>Community Resources:</p>' +
+                               '<ul>' +
+                               '<li><a href="https://hacking-notes.com/" target="_blank">Red Team Notes (Github)</a></li>' +
+                               '<li><a href="https://tryhackme.com/r/room/hacksmartersecurity" target="_blank">Hack Smarter Room (TryHackMe)</a></li>' +
+                               '<li><a href="https://www.youtube.com/@KevtechITSupport" target="_blank">Kevtech IT Support (YouTube)</a></li>' +
+                               '<li><a href="https://www.youtube.com/@kevingaray_cyberguy" target="_blank">Kevin Garay (YouTube)</a></li>' +
+                               '<li><a href="https://www.youtube.com/@overgrowncarrot1" target="_blank">OvergrownCarrot (YouTube)</a></li>' +
+                               '<li><a href="https://discord.com/invite/dBVn5HApMQ" target="_blank">Anass Ali – Dutch Based Group (Discord)</a></li>' +
+                               '<li><a href="https://arorarachit.com/" target="_blank">Rachit Arora (Blog)</a></li>' +
+                               '<li><a href="https://hironewf.vercel.app/" target="_blank">HiroNewf (Blog)</a></li>' +
+                               '<li><a href="https://github.com/b1g-b33f" target="_blank">Shawn Szczepkowski (Github)</a></li>' +
+                               '<li><a href="https://www.cyberseclog.com/" target="_blank">CyberSec Log (Blog)</a></li>' +
+                               '<li><a href="https://medium.com/@enigma_" target="_blank">Enigma (Blog)</a></li>' +
+                               '<li><a href="https://github.com/t0x-1k" target="_blank">t0x-1k (Github)</a></li>' +
+                               '<li><a href="https://gereshknw.com/" target="_blank">Gereshk (Blog)</a></li>' +
+                               '<li><a href="https://bl34chig0.github.io/" target="_blank">bL34cHig0 (Blog)</a></li>' +
+                               '<li><a href="https://jjkzn.github.io/" target="_blank">JJkzn (Blog)</a></li>' +
+                               '<li><a href="https://www.youtube.com/@ZachJoaquin" target="_blank">Zach Joaquin (YouTube)</a></li>' +
+                               '<li><a href="https://benheater.com/" target="_blank">Ben Heater (Blog)</a></li>' +
+                               '<li><a href="https://rock3traccoon.github.io/Secops_Blog/" target="_blank">Secops Blog – Hex (Blog)</a></li>' +
+                               '<li><a href="https://writeups-kunull.vercel.app/" target="_blank">Kunull Write-Ups</a></li>' +
+                               '<li><a href="https://blog-kunull.vercel.app/" target="_blank">Kunull Technical Blog</a></li>' +
+                               '<li><a href="https://manav-g-krishna.gitbook.io/tryhackme-writeups" target="_blank">TryHackMe Write-ups (Manav’s Blog)</a></li>' +
+                               '<li><a href="https://reports-kunull.vercel.app/" target="_blank">Kunull Security Research</a></li>' +
+                               '</ul>';
+                    break;
+                case 'whoami':
+                    response = '<p>www-data</p>';
+                    break;
+                case 'clear':
+                    outputDiv.innerHTML = '';
+                    commandInput.value = '';
+                    return;
+                default:
+                    response = '<p>Unknown command: ' + command + '</p>';
+            }
+
+            outputDiv.innerHTML = '<div class="command-line"><pre>www-data@hacksmarter:~$ ' + command + '</pre></div>' + response;
+            commandInput.value = '';
+            outputDiv.scrollTop = outputDiv.scrollHeight;
+        }
+
+        commandInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                processCommand();
+            }
+        });
+    </script>
+</body>
+</html>
