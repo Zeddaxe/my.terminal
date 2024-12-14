@@ -86,7 +86,6 @@
                 <p>Available commands (type or click to use):</p>
                 <ul>
                     <li><a href="#" onclick="executeCommand('cat discord.txt'); return false;">cat discord.txt</a></li>
-                    <li><a href="#" onclick="executeCommand('cat streaming.txt'); return false;">cat streaming.txt</a></li>
                     <li><a href="#" onclick="executeCommand('cat info.txt'); return false;">cat info.txt</a></li>
                     <li><a href="#" onclick="executeCommand('cat community-resources.txt'); return false;">cat community-resources.txt</a></li>
                     <li><a href="#" onclick="executeCommand('whoami'); return false;">whoami</a></li>
@@ -121,11 +120,6 @@
                     response = '<p>Join my Discord community server: <a href="https://discord.gg/zQ9mXpN6Jy" target="_blank">https://discord.gg/zQ9mXpN6Jy</a></p>';
                     break;
 
-                case 'cat streaming.txt':
-                    response = '<p>We release videos 3-5 times a week on YouTube: <a href="https://youtube.com/@TylerRamsbey" target="_blank">https://youtube.com/@TylerRamsbey</a></p>' +
-                               '<p>We live stream regularly on Twitch: <a href="https://twitch.tv/hack_smarter" target="_blank">https://twitch.tv/hack_smarter</a></p>';
-                    break;
-
                 case 'cat info.txt':
                     response = '<p>w0rldwid3 syndicate is a community dedicated to ethical hacking, cybersecurity, and continuous learning. We have a Capture The Flag (CTF) team, offer coaching, and host weekly meetings to help members sharpen their skills. Stay connected with our latest content and events.</p>';
                     break;
@@ -134,8 +128,7 @@
                     response = '<p>Community Resources:</p>' +
                                '<ul>' +
                                '<li><a href="https://hacking-notes.com/" target="_blank">Red Team Notes (Github)</a></li>' +
-                               '<li><a href="https://tryhackme.com/r/room/hacksmartersecurity" target="_blank">Hack Smarter Room (TryHackMe)</a></li>' +
-                               '<li><a href="https://www.youtube.com/@KevtechITSupport" target="_blank">Kevtech IT Support (YouTube)</a></li>' +
+                               '<li><a href="https://github.com/HackTricks-wiki/hacktricks" target="_blank">HAckTricx Repository</a></li>' +
                                // Add more resources as needed
                                '</ul>';
                     break;
