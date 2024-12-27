@@ -1,2 +1,2 @@
-# my.terminal
+# shell-ter
 info.cli
